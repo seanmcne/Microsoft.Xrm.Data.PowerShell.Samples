@@ -36,6 +36,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AddCrmOLUsersFromCSV\AddCrmOLUsersFromCSV.ps1" />
+    <Compile Include="AddCrmOLUsersFromCSV\O365Users.csv" />
     <Compile Include="AddCrmOLUsersFromCSV\README.md" />
     <Compile Include="AddCrmUsersFromCSV\AddCrmUsersFromCSV.ps1" />
     <Compile Include="AddCrmUsersFromCSV\ADUsers.csv" />
