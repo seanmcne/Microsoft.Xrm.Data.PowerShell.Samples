@@ -26,6 +26,14 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="AddCrmOLUsersFromCSV\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCrmOLUsersFromCSV\AddCrmOLUsersFromCSV.ps1" />
+    <Compile Include="AddCrmOLUsersFromCSV\O365Users.csv" />
+    <Compile Include="AddCrmOLUsersFromCSV\README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
 </Project>
