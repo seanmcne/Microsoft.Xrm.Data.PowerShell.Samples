@@ -26,6 +26,33 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="AddCrmOLUsersFromCSV\" />
+    <Folder Include="AddCrmUsersFromCSV\" />
+    <Folder Include="AddCrmUsersFromOU\" />
+    <Folder Include="MultiOrgOperation\" />
+    <Folder Include="UpdateCrmUsersSettings\" />
+    <Folder Include="ReprovisionCrmLanguage\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCrmOLUsersFromCSV\AddCrmOLUsersFromCSV.ps1" />
+    <Compile Include="AddCrmUsersFromCSV\AddCrmUsersFromCSV.ps1" />
+    <Compile Include="AddCrmUsersFromOU\AddCrmUsersFromOU.ps1" />
+    <Compile Include="MultiOrgOperation\MultiOrgOperation.ps1" />
+    <Compile Include="ReprovisionCrmLanguage\ReprovisionCrmLanguage.ps1" />
+    <Compile Include="UpdateCrmUsersSettings\UpdateCrmUsersSettings.ps1" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AddCrmOLUsersFromCSV\O365Users.csv" />
+    <Content Include="AddCrmOLUsersFromCSV\README.md" />
+    <Content Include="AddCrmUsersFromCSV\ADUsers.csv" />
+    <Content Include="AddCrmUsersFromCSV\README.md" />
+    <Content Include="AddCrmUsersFromOU\README.md" />
+    <Content Include="MultiOrgOperation\connectionssource.csv" />
+    <Content Include="MultiOrgOperation\README.md" />
+    <Content Include="ReprovisionCrmLanguage\README.md" />
+    <Content Include="UpdateCrmUsersSettings\README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
 </Project>

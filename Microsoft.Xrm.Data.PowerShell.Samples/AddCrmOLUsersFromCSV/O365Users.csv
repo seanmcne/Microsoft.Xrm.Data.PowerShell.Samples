@@ -1,0 +1,2 @@
+UserPrincipalName,DisplayName,FirstName,LastName,PhoneNumber,MobilePhone,PostalCode,City,Country,State,StreetAddress,Title,Department,Office,Fax,UsageLocation,Password,StrongPasswordRequired,PasswordNeverExpires,ForceChangePassword,BusinessUnitName,SecurityRoleName,SystemUserId,BusinessUnitId
+user001@contoso.onmicrosoft.com,test user001,test,user001,555-555x,555-555x,999-999x,Seattle,United States,WA,Sample Street,Sales Rep.,Sales,Seattle,,US,password,TRUE,FALSE,FALSE,Contoso,salesperson,,
