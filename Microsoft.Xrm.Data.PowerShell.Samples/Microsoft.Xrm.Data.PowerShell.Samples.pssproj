@@ -34,6 +34,23 @@
     <Folder Include="ReprovisionCrmLanguage\" />
     <Folder Include="UpdateCrmUsersSettings\" />
   </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AddCrmOLUsersFromCSV\AddCrmOLUsersFromCSV.ps1" />
+    <Compile Include="AddCrmOLUsersFromCSV\O365Users.csv" />
+    <Compile Include="AddCrmOLUsersFromCSV\README.md" />
+    <Compile Include="AddCrmUsersFromCSV\AddCrmUsersFromCSV.ps1" />
+    <Compile Include="AddCrmUsersFromCSV\ADUsers.csv" />
+    <Compile Include="AddCrmUsersFromCSV\README.md" />
+    <Compile Include="AddCrmUsersFromOU\AddCrmUsersFromOU.ps1" />
+    <Compile Include="AddCrmUsersFromOU\README.md" />
+    <Compile Include="MultiOrgOperation\connectionssource.csv" />
+    <Compile Include="MultiOrgOperation\MultiOrgOperation.ps1" />
+    <Compile Include="MultiOrgOperation\README.md" />
+    <Compile Include="ReprovisionCrmLanguage\README.md" />
+    <Compile Include="ReprovisionCrmLanguage\ReprovisionCrmLanguage.ps1" />
+    <Compile Include="UpdateCrmUsersSettings\README.md" />
+    <Compile Include="UpdateCrmUsersSettings\UpdateCrmUsersSettings.ps1" />
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="Build" />
 </Project>
