@@ -31,6 +31,8 @@
     <Folder Include="AddCrmUsersFromCSV\" />
     <Folder Include="AddCrmUsersFromOU\" />
     <Folder Include="MultiOrgOperation\" />
+    <Folder Include="CountRecordsForAllEntities\" />
+    <Folder Include="TestViewsPerformance\" />
     <Folder Include="UpdateCrmUsersSettings\" />
     <Folder Include="ReprovisionCrmLanguage\" />
   </ItemGroup>
@@ -38,8 +40,10 @@
     <Compile Include="AddCrmOLUsersFromCSV\AddCrmOLUsersFromCSV.ps1" />
     <Compile Include="AddCrmUsersFromCSV\AddCrmUsersFromCSV.ps1" />
     <Compile Include="AddCrmUsersFromOU\AddCrmUsersFromOU.ps1" />
+    <Compile Include="CountRecordsForAllEntities\CountRecordsForAllEntities.ps1" />
     <Compile Include="MultiOrgOperation\MultiOrgOperation.ps1" />
     <Compile Include="ReprovisionCrmLanguage\ReprovisionCrmLanguage.ps1" />
+    <Compile Include="TestViewsPerformance\TestViewsPerformamce.ps1" />
     <Compile Include="UpdateCrmUsersSettings\UpdateCrmUsersSettings.ps1" />
   </ItemGroup>
   <ItemGroup>
