@@ -88,7 +88,7 @@ $pagingLimit = 50
 # 1-Ask me for permission to send an errro report to Microsoft
 # 2-Automatically send an error report to Microsoft without asking me for permission
 # 3-Never sent an error report to Microsoft about Microsoft Dynamics CRM
-$reportScriptErrorOption = 3
+$reportScriptErrorOption = 2
 # You need to provision language pack before setting this. 
 $uiLanguageId = 1033
 # Specify Currency ISO Code
