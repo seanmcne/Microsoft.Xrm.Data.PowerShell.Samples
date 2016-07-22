@@ -16,7 +16,8 @@ This sample includes:
   g.	$pagingLimit: Specify how many records per view. Value can be 25,50,75,100,250<br/>
   h.	$reportScriptErrorOption: Set options for Privacy tab.<br/>
   i.	$uiLanguageId: Set user’s UI Language LCID.<br/>
-  j.	$transactionCurrencyName: Set user’s transaction currency by ISO name.<br/>
+  j.	$localeId: Set user’s Formatting setting.<br/>
+  k.	$transactionCurrencyName: Set user’s transaction currency by ISO name.<br/>
 3.	Save the ps1 file.
 4.	Run the ps1 file via PowerShell.
 5.	Connect to your Dynamics CRM organization to see user option. It may take several seconds before actual settings are reflected.
