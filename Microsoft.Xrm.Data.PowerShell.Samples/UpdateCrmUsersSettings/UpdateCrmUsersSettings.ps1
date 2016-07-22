@@ -43,6 +43,7 @@ Function Update-CrmUserSettings
         [Int]$PagingLimit,
         [Int]$ReportScriptErrorOption,
         [Int]$UILanguageId,
+        [int]$LocaleId,
         [string]$TransactionCurrencyName
     )
     
@@ -55,6 +56,7 @@ Function Update-CrmUserSettings
     $userSetting.paginglimit = $PagingLimit
     $userSetting.reportscripterrors = New-CrmOptionSetValue -Value $ReportScriptErrorOption
     $userSetting.uilanguageid = $UILanguageId
+    $userSetting.uilanguageid = $LocaleId
 
     $currencyId = Get-CrmTransactionCurrencyId -ISOCode $TransactionCurrencyName
     
@@ -91,6 +93,8 @@ $pagingLimit = 50
 $reportScriptErrorOption = 2
 # You need to provision language pack before setting this. 
 $uiLanguageId = 1033
+# Specify LocalId which update formatting setting
+$localeId = 1033
 # Specify Currency ISO Code
 $transactionCurrencyName = "USD"
 # Script parameters #
@@ -122,7 +126,7 @@ $users = Get-CrmRecords -EntityLogicalName systemuser -FilterAttribute isdisable
 Write-Output "Update CRM user setting"
 $users.CrmRecords | % {Update-CrmUserSettings -User $_ -AdvancedFindStartupMode $advancedFindStartupMode `
 -TimeZoneCode $timeZoneCode -PagingLimit $pagingLimit -ReportScriptErrorOption $reportScriptErrorOption `
--UILanguageId $uiLanguageId -TransactionCurrencyName $transactionCurrencyName `
+-UILanguageId $uiLanguageId -LocaleId $localeId -TransactionCurrencyName $transactionCurrencyName `
 }
 
 Write-Output "Completed"
