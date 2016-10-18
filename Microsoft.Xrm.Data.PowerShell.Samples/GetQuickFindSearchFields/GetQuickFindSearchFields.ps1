@@ -12,4 +12,32 @@
 # (ii) to include a valid copyright notice on Your software product in which the Sample Code is embedded; 
 # and (iii) to indemnify, hold harmless, and defend Us and Our suppliers from and against any claims or lawsuits, including attorneys’ fees, that arise or result from the use or distribution of the Sample Code 
 
-Connect-CrmOnlineDiscovery -InteractiveMode# Get all QuickFind views (query type of 4)$views = Get-CrmRecords savedquery querytype eq 4 name,fetchxml,returnedtypecode$results = New-Object System.Collections.Generic.List[string]foreach($view in $views.CrmRecords){    $entityname = $view.returnedtypecode    $xml = [xml]$view.fetchxml    $filters = $xml.fetch.entity.filter.condition | ? value -eq "{0}"    $int = 0    foreach($filter in $filters)    {        # if you want to generate fields detail, do it here.        $int++        if($filter.attribute -contains "composite")        {            Write-Host $entityname has $filter.attribute        }    }        $results.Add("$entityname has $int search fields.")   }$results.Sort()$results
+Connect-CrmOnlineDiscovery -InteractiveMode
+
+# Get all QuickFind views (query type of 4)
+
+$views = Get-CrmRecords -EntityLogicalName savedquery -FilterAttribute querytype -FilterOperator eq -FilterValue 4 -Fields name,fetchxml,returnedtypecode
+
+$results = New-Object System.Collections.Generic.List[string]
+
+foreach($view in $views.CrmRecords)
+{
+    $entityname = $view.returnedtypecode
+    $xml = [xml]$view.fetchxml
+    $filters = $xml.fetch.entity.filter.condition | ? value -eq "{0}"
+    $int = 0
+    foreach($filter in $filters)
+    {
+        # if you want to generate fields detail, do it here.
+        $int++
+        if($filter.attribute -contains "composite")
+        {
+            Write-Host $entityname has $filter.attribute
+        }
+    }
+    
+    $results.Add("$entityname has $int search fields.")   
+}
+
+$results.Sort()
+$results
