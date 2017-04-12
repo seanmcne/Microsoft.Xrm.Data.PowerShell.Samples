@@ -18,7 +18,8 @@ param
   [string]$OrganizationName = 'YourOrg',
   [Parameter(Mandatory = $true)]
   [pscredential]$AdminUserCredentials = (Get-Credential),
-  [string]$csvPath = ".\ADUsers.csv"
+  [string]$csvPath = ".\ADUsers.csv",
+  [switch]$CreateActiveDirUsers
 )
 Function New-ADUserFromCsv
 {
@@ -209,15 +210,23 @@ if(get-command -module 'Microsoft.Xrm.Data.Powershell')
              $user.PostalCode = $u.PostalCode
              $User.Department = $u.department
             }
-            else
+            elseif($CreateActiveDirUsers)
             {
-                Write-Output "$($user.Identity) wasn't found in Active Directory"
+				#create new array if switch is thrown for the new-aduserfromcsv to create.
+				$adUsers2Create +=$user
             }
+			else
+			{
+				Write-Warning "$($user.Identity) wasn't found in Active Directory"
+				Write-Warning "Removing this user: $($user.Identity) from users to add to CRM"
+				$users = $users |  Where-Object {$_ -ne $user}
+			}
         }
-
-        Write-Output "Creating AD User and Enable it"
-        $users | ForEach-Object {New-ADUserFromCsv -User $_ }
-
+		if($CreateActiveDirUsers)
+		{
+			Write-Output "Creating AD User and Enable it"
+			$adUsers2Create | ForEach-Object {New-ADUserFromCsv -User $_ }
+		}
         Write-Output "Create Crm User on Dynamics CRM OnPremise"
         $users | ForEach-Object {Create-CrmUser -User $_}
 
