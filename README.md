@@ -5,7 +5,7 @@ This is samples repositry for [Microsoft.Xrm.Data.PowerShell](https://github.com
 
 This code repo is managed by Sean McNellis and Kenichiro Nakamura, however we accept community input and PR's (especially for samples).
 
-Each samples contains README.md
+We'd like each sample to contain a README.md for light documentation and notes but some samples are documented in PS comments. If you see the need for a readme in one of the samples please send us a PR.   
 
 #### About Authors
 Sean McNellis, Sr. Premier Field Engineer, is based out of North America and works supporting Dynamics CRM customers.
