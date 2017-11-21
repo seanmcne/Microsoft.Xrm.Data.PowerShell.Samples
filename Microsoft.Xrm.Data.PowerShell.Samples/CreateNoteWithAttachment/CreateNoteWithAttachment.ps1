@@ -19,8 +19,8 @@ function CreateNote
 {
     param
     (
-		[string] $file,
-		[hashtable] $entity
+        [string] $file,
+        [hashtable] $entity
     )
 
 	# The file attachment is stored as a base64-encoded string value in the database. Therefore, we need to encode the file first.
