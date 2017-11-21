@@ -23,14 +23,14 @@ function CreateNote
         [hashtable] $entity
     )
 
-	# The file attachment is stored as a base64-encoded string value in the database. Therefore, we need to encode the file first.
+    # The file attachment is stored as a base64-encoded string value in the database. Therefore, we need to encode the file first.
     $documentBody = [Convert]::ToBase64String((Get-Content -Path $file -Encoding Byte))
 
-	# Add the encoded document to the hash describing the Note.
-	$entity.Add("documentbody", $documentBody)
+    # Add the encoded document to the hash describing the Note.
+    $entity.Add("documentbody", $documentBody)
 
-	# Create the record with all the provided data.
-	New-CrmRecord -EntityLogicalName annotation -Fields $entity
+    # Create the record with all the provided data.
+    New-CrmRecord -EntityLogicalName annotation -Fields $entity
 }
 
 # Connect to Dynamics 365. Use Connect-CrmOnPremDiscovery for On-Premise.
@@ -41,10 +41,10 @@ $fileName = "<FullPathToYourFile>\MyWordTemplate.docx";
 
 # Create a hash containing the field value that describe the Note.
 $entityFields = @{
-	"subject" = "This note was created from PowerShell!"
-	"mimetype" = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
-	# The file name of the file to be created, does not have to be the same as the one you uploaded.
-	"filename" = "MyWordTemplate.docx"
+    "subject" = "This note was created from PowerShell!"
+    "mimetype" = "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+    # The file name of the file to be created, does not have to be the same as the one you uploaded.
+    "filename" = "MyWordTemplate.docx"
 }
 
 # Run the sample
