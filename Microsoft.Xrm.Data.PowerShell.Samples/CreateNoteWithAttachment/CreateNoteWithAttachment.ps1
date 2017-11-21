@@ -19,7 +19,7 @@ function CreateNote
 {
     param
     (
-        [string] $file,
+		[string] $file,
 		[hashtable] $entity
     )
 
