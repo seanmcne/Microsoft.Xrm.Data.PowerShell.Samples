@@ -15,7 +15,7 @@
 # Set export folder path
 $path = "<Path here>"
 
-# Connect to Dynamics CRM. Use Connect-CrmOnPremDiscovery for On-Premis
+# Connect to Dynamics CRM. Use Connect-CrmOnPremDiscovery for On-Premise
 Connect-CrmOnlineDiscovery -InteractiveMode
 
 # Export Application Ribbon definition
