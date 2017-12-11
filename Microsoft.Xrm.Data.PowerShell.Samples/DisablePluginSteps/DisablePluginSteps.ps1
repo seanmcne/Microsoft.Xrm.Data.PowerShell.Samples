@@ -34,7 +34,7 @@ function DisablePluginStep
     -StateCode Disabled -StatusCode Disabled
 }
 
-# Connect to Dynamics CRM. Use Connect-CrmOnPremDiscovery for On-Premis
+# Connect to Dynamics CRM. Use Connect-CrmOnPremDiscovery for On-Premise
 Connect-CrmOnlineDiscovery -InteractiveMode
 
 # First of all, get all custom assemblies
