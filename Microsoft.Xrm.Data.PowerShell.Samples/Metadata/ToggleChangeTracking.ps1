@@ -35,6 +35,7 @@ function DisableChangeTracking($EntityName){
 }
 
 #enable change tracking on account, contact, and opportunity
+#TODO: check for an error on each loop of EnableChangeTracking and report when it fails versus ignoring the exception
 "account,contact,opportunity".split(",")|foreach{
 try{
    EnableChangeTracking($_)
