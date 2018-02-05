@@ -12,7 +12,7 @@ function EnableChangeTracking($EntityName){
       $response = $conn.ExecuteCrmOrganizationRequest($entityUpdate)
       if("" -ne $conn.LastCrmException)
       {
-        throw $conn.LastCrmError    
+        throw $conn.LastCrmException    
       }    
 }
 
@@ -30,16 +30,22 @@ function DisableChangeTracking($EntityName){
       $response = $conn.ExecuteCrmOrganizationRequest($entityUpdate)
       if("" -ne $conn.LastCrmException)
       {
-        throw $conn.LastCrmError    
+        throw $conn.LastCrmException    
       } 
 }
+
 #enable change tracking on account, contact, and opportunity
-"account,contact,opportunity".split(",")|foreach{EnableChangeTracking($_)}
+"account,contact,opportunity".split(",")|foreach{
+try{
+   EnableChangeTracking($_)
+   }catch{}
+}
+
 
 #publish all metadata changes
 $Publish = new-object Microsoft.Crm.Sdk.Messages.PublishAllXmlRequest
 $conn.ExecuteCrmOrganizationRequest($Publish)
 if("" -ne $conn.LastCrmException)
 {
-throw $conn.LastCrmError    
+    throw $conn.LastCrmException
 }    
