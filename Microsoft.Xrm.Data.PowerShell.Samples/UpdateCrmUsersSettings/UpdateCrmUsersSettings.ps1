@@ -124,7 +124,7 @@ Write-Output "Retrieve all active users"
 $users = Get-CrmRecords -EntityLogicalName systemuser -FilterAttribute isdisabled -FilterOperator eq -FilterValue $false -Fields systemuserid,fullname
 
 Write-Output "Update CRM user setting"
-$users.CrmRecords | % {Update-CrmUserSettings -User $_ -AdvancedFindStartupMode $advancedFindStartupMode `
+$users.CrmRecords | % {Set-CrmUserSettings -User $_ -AdvancedFindStartupMode $advancedFindStartupMode `
 -TimeZoneCode $timeZoneCode -PagingLimit $pagingLimit -ReportScriptErrorOption $reportScriptErrorOption `
 -UILanguageId $uiLanguageId -LocaleId $localeId -TransactionCurrencyName $transactionCurrencyName `
 }
