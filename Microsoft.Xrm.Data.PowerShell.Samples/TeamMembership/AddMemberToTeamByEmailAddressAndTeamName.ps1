@@ -12,7 +12,7 @@ function addUserToTeam{
     if($teams.Count -gt 1){
         throw "Error - more than one team returned for: $teamName"
     }else{
-        Write-Output "Found team $teamName with Id: $($teams.CrmRecords[0].teamid)"
+        Write-Verbose "Found team $teamName with Id: $($teams.CrmRecords[0].teamid)"
     }
 
     $fetch=
@@ -33,32 +33,24 @@ function addUserToTeam{
     if($users.Count -gt 1){
         throw "Error - more than one user was returned for: $userUpn"
     }else{
-        Write-Output "Found user $userUpn with Id: $($users.CrmRecords[0].systemuserid)"
+        Write-Verbose "Found user $userUpn with Id: $($users.CrmRecords[0].systemuserid)"
     }
 
     if($teams.Count -eq 1 -and $users.Count -eq 1){
          #ID of the team list you want to add members (or a single member) to 
-
         $teamMembers = @(); 
-
         $teamMembers += @($users.CrmRecords[0].systemuserid)
-
-        #$teamMembers += @("E563BB21-E3E4-A1CF-40A5-C8975E9C3860" )
-
         $AddMember = new-object Microsoft.Crm.Sdk.Messages.AddMembersTeamRequest
-
         $AddMember.TeamId = $teams.CrmRecords[0].teamid
-
         $AddMember.MemberIds = $teamMembers 
-
-        $conn.ExecuteCrmOrganizationRequest($AddMember)
+        $result = $conn.ExecuteCrmOrganizationRequest($AddMember)
         if($conn.LastCrmException -ne $null){
             throw $conn.LastCrmException
         }
-        if($conn.LastCrmError -ne $null){
+        if($conn.LastCrmError -ne ""){
                     throw $conn.LastCrmError
         }
-
+        Write-Output "Sucessfully added $userUpn to $teamName"
     }
     else {
         throw "Add Member To Team was not completed"
