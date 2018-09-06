@@ -29,3 +29,6 @@ $bulkDeleteJobReq.RunNow = $false
 
 #start at 10pm
 $bulkDeleteJobReq.StartDateTime = (Get-Date -Date "9/6/2018 10:00:00 PM") 
+$bulkDelJobResponse=$conn.ExecuteCrmOrganizationRequest($bulkDeleteJobReq) 
+
+#TODO Check for failures on $conn.LastCrmError here
