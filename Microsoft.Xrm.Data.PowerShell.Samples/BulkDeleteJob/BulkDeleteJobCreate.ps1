@@ -22,6 +22,8 @@ $qeResponse=$conn.ExecuteCrmOrganizationRequest($qe)
 
 $bulkDeleteJobReq = new-object Microsoft.Crm.Sdk.Messages.BulkDeleteRequest 
 $bulkDeleteJobReq.JobName = "My Awesome Bulk Delete Job Name" 
+$bulkDeleteJobReq.ToRecipients = @() #none
+$bulkDeleteJobReq.CCRecipients = @() #none
 $bulkDeleteJobReq.QuerySet=$qeResponse.Query
 #Recurrence Patterns Documentation: https://msdn.microsoft.com/en-us/library/gg328511.aspx
 $bulkDeleteJobReq.RecurrencePattern = "FREQ-DAILY;"  
