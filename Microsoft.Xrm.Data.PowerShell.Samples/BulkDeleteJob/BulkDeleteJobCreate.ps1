@@ -26,7 +26,7 @@ $bulkDeleteJobReq.ToRecipients = @() #none
 $bulkDeleteJobReq.CCRecipients = @() #none
 $bulkDeleteJobReq.QuerySet=$qeResponse.Query
 #Recurrence Patterns Documentation: https://msdn.microsoft.com/en-us/library/gg328511.aspx
-$bulkDeleteJobReq.RecurrencePattern = "FREQ=Minutes;INTERVAL=1440"  
+$bulkDeleteJobReq.RecurrencePattern = "FREQ=DAILY;"
 $bulkDeleteJobReq.RunNow = $false 
 
 #start at 10pm
