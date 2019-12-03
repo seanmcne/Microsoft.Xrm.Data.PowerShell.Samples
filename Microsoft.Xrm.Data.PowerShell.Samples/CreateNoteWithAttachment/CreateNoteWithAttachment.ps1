@@ -34,7 +34,7 @@ function CreateNote
 }
 
 # Connect to Dynamics 365. Use Connect-CrmOnPremDiscovery for On-Premise.
-Connect-CrmOnlineDiscovery -InteractiveMode
+Connect-CrmOnlineDiscovery -ServerUrl environment.crm4.dynamics.com
 
 # Sample Microsoft Word document location on local filesystem.
 $fileName = "<FullPathToYourFile>\MyWordTemplate.docx";
