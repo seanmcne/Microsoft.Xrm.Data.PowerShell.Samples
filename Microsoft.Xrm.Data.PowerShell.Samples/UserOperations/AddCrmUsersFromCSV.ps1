@@ -18,7 +18,7 @@ param
   [string]$OrganizationName = 'YourOrg',
   [Parameter(Mandatory = $true)]
   [pscredential]$AdminUserCredentials = (Get-Credential),
-  [string]$csvPath = ".\ADUsers.csv",
+  [string]$csvPath = ".\AddCrmUsersFromCSV.csv",
   [switch]$CreateActiveDirUsers
 )
 Function New-ADUserFromCsv

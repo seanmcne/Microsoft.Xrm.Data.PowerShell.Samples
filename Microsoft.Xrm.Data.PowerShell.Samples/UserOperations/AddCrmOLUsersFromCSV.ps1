@@ -198,7 +198,7 @@ $msolUser = "<Office 365 admin account. i.e.) administator@contoso.onmicrosoft.c
 $msolPassword = ConvertTo-SecureString -String "<password>" -AsPlainText -Force
 $msolDomainName = "<Office 365 tenant name. i.e.) contoso>"
 $msolGroupName = "<Office 365 Group name>"
-$csvPath = ".\O365Users.csv"
+$csvPath = ".\AddCrmOLUsersFromCSV.csv"
 
 $crmAdminUser = "<CRM admin account. i.e.) administator@contoso.onmicrosoft.com>"
 $crmAdminPassword = ConvertTo-SecureString -String "<password>" -AsPlainText -Force
