@@ -8,11 +8,11 @@ This code repo is managed by Sean McNellis and Kenichiro Nakamura, however we ac
 We'd like each sample to contain a README.md for light documentation and notes but some samples are documented in PS comments. If you see the need for a readme in one of the samples please send us a PR.   
 
 #### About Authors
-Sean McNellis, Sr. Premier Field Engineer, is based out of North America and works supporting Dynamics CRM customers.
+Sean McNellis
 Twitter: [@seanmcne](https://twitter.com/seanmcne)
 Team Blog (English): [http://blogs.msdn.com/CrmInTheField](http://blogs.msdn.com/CrmInTheField) 
 
-Kenichiro Nakamura, Sr. Premier Mission Critical Specialist, is based out of Japan and works supporting PMC customers.
+Kenichiro Nakamura
 Team Blog (Japanese): [http://blogs.msdn.com/CrmJapan](http://blogs.msdn.com/CrmJapan) 
 
 Team Twitter: [@pfedynamics](https://twitter.com/pfedynamics)
