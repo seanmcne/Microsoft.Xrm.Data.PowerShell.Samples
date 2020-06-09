@@ -1,4 +1,5 @@
-#Create three plugin trace log views to use in the UI for analyzing all messages, successful log messages, and only exceptions 
+#Create three plugin trace log views to use in the UI for analyzing all messages, successful log messages, and only exceptions.  
+#creating these cannot be done via advanced find directly due to attributes missing from the attribute selector
 
 #create an all up  view
 $querytype=0
