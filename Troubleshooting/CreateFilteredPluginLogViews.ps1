@@ -1,3 +1,5 @@
+#Create three plugin trace log views to use in the UI for analyzing all messages, successful log messages, and only exceptions 
+
 #create an all up  view
 $querytype=0
 $name = "Exception Logs"
