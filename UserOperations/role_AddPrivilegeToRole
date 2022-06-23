@@ -1,0 +1,15 @@
+$crmPrivilegeId = #privilege guid 
+$crmBusinessUnitId = #businessUnitGuid
+$crmPrivilegeId = #specificPrivilegeId
+$CrmRoleIdToSetNewPrivilege = #roleId
+
+$rolePriv1 = New-Object Microsoft.Crm.Sdk.Messages.RolePrivilege
+$rolePriv1.Depth = 3
+$rolePriv1.PrivilegeId = $crmPrivilegeId
+$rolePriv1.BusinessUnitId = $crmBusinessUnitId
+
+$AddPrivRoleReq = new-object Microsoft.Crm.Sdk.Messages.AddPrivilegesRoleRequest
+$AddPrivRoleReq.RoleId = $CrmRoleIdToSetNewPrivilege
+$AddPrivRoleReq.Privileges = @($rolePriv1)
+
+$response=$conn.ExecuteCrmOrganizationRequest($AddPrivRoleReq) 
