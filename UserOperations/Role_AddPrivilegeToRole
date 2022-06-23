@@ -1,3 +1,5 @@
+#reference other samples on how best to connect to Dataverse/D365 using Connect-CrmOnline
+
 $crmPrivilegeId = #privilege guid 
 $crmBusinessUnitId = #businessUnitGuid
 $crmPrivilegeId = #specificPrivilegeId
